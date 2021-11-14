@@ -54,16 +54,10 @@ class AmazingJob: Job {
         }
 
         dispatchGroup!.notify(queue: .main) {
-            print("All Process Done!")
+            print("All done")
         }
 
         self.isCancelled = false
-
-//        if let cancelledState = self.cancelledState {
-//            self.changeState(nextState: cancelledState)
-//        } else {
-//            self.state.perform(self)
-//        }
     }
 
     func cancel() {
@@ -122,46 +116,46 @@ class AmazingJob: Job {
 extension AmazingJob {
 
     func startProcess() {
-        print("start process s")
+        print("start s")
         changeNextState()
-        print("start process e")
+        print("start e")
     }
 
     func startingProcess() {
-        print("starting process s")
+        print("starting s")
         self.timerProcess()
-        print("starting process e")
+        print("starting e")
     }
 
     func runningProcess() {
-        print("running process s")
+        print("running s")
         self.timerProcess()
-        print("running process e")
+        print("running e")
     }
 
     func stoppingProcess() {
-        print("stopping process s")
+        print("stopping s")
         self.timerProcess()
-        print("stopping process e")
+        print("stopping e")
     }
 
     func stopProcess() {
-        print("stop process s")
+        print("stop s")
         changeNextState()
-        print("stop process e")
+        print("stop e")
     }
 
     func suspendingProcess() {
-        print("suspending process s")
+        print("suspending s")
         self.retry?.cancel()
         changeNextState()
-        print("suspending process e")
+        print("suspending e")
     }
 
     func suspendProcess() {
-        print("suspend process s")
+        print("suspend s")
         changeNextState()
-        print("suspend process e")
+        print("suspend e")
     }
 
     @objc func timerProcess() {

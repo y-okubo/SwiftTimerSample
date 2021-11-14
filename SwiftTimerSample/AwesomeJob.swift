@@ -99,22 +99,22 @@ class AwesomeJob: NSObject, Job {
 extension AwesomeJob {
 
     func didStart() {
-        print("start process s")
+        print("start s")
         for i in (0..<50) {
             awesomeSomethings.append(AwesomeSomething(i + 1000))
         }
         changeNextState()
-        print("start process e")
+        print("start e")
     }
 
     func didStarting() {
-        print("starting process s")
+        print("starting s")
         self.accessHardToReachNetworks()
-        print("starting process e")
+        print("starting e")
     }
 
     func didRunning() {
-        print("running process s")
+        print("running s")
 
         for (i, something) in self.awesomeSomethings.enumerated() {
             if something.result != 0 {
@@ -137,32 +137,32 @@ extension AwesomeJob {
             changeNextState()
         }
 
-        print("running process e")
+        print("running e")
     }
 
     func didStopping() {
-        print("stopping process s")
+        print("stopping s")
         self.accessHardToReachNetworks()
-        print("stopping process e")
+        print("stopping e")
     }
 
     func didStop() {
-        print("stop process s")
+        print("stop s")
         changeNextState()
-        print("stop process e")
+        print("stop e")
     }
 
     func didSuspending() {
-        print("suspending process s")
+        print("suspending s")
         self.retry?.cancel()
         changeNextState()
-        print("suspending process e")
+        print("suspending e")
     }
 
     func didSuspend() {
-        print("suspend process s")
+        print("suspend s")
         changeNextState()
-        print("suspend process e")
+        print("suspend e")
     }
 
     @objc func accessHardToReachNetworks() {
