@@ -46,5 +46,13 @@ class ViewController: NSViewController {
         }
     }
 
+    @IBAction func upload(_ sender: Any) {
+        print("upload")
+
+        let uploader = Uploader()
+
+        uploader.upload()
+    }
+
 }
 
